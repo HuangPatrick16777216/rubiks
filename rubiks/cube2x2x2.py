@@ -50,7 +50,10 @@ class Move:
         self.prime = prime
 
     def __repr__(self):
-        pass
+        string = Move.type_to_symbol(self.type)
+        if self.prime:
+            string += "'"
+        return string
 
     @staticmethod
     def type_to_symbol(type: int):
