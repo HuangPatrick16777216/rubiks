@@ -38,3 +38,21 @@ MOVE_T:  int = 14
 MOVE_TP: int = 15
 MOVE_B:  int = 16
 MOVE_BP: int = 17
+
+
+class Move:
+    """
+    Class for a single move on a cube.
+    """
+
+    _type: int
+    _prime: bool
+
+    def __init__(self, move_type: int, prime: bool = False):
+        """
+        Initializes move.
+        :param move_type: cube2x2x2.MOVE_R, cube2x2x2.MOVE_T, etc
+        :param prime: Whether the move is prime (rotated ccw instead of cw)
+        """
+        self._type = move_type
+        self._prime = prime
