@@ -20,19 +20,19 @@
 from typing import List
 
 
-W:   int = 0
-Y:  int = 1
-B:    int = 2
-G:   int = 3
-R:     int = 4
-O:  int = 5
+W: int = 0
+Y: int = 1
+B: int = 2
+G: int = 3
+R: int = 4
+O: int = 5
 
-MOVE_R:  int = 6
-MOVE_L:  int = 7
-MOVE_F:  int = 8
-MOVE_B:  int = 9
-MOVE_U:  int = 10
-MOVE_D:  int = 11
+MOVE_R: int = 6
+MOVE_L: int = 7
+MOVE_F: int = 8
+MOVE_B: int = 9
+MOVE_U: int = 10
+MOVE_D: int = 11
 
 
 class Move:
