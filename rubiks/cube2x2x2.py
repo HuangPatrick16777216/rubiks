@@ -17,6 +17,9 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+from typing import List
+
+
 WHITE:   int = 0
 YELLOW:  int = 1
 BLUE:    int = 2
@@ -97,3 +100,14 @@ class Move:
         type = Move.symbol_to_type(string[0])
         prime = len(string) > 1
         return cls(type, prime)
+
+
+class MoveSequence:
+    """
+    A sequence of moves.
+    """
+
+    moves: List[Move]
+
+    def __init__(self, moves: List[Move] = []) -> None:
+        self.moves = moves
