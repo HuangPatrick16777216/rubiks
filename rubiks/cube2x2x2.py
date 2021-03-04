@@ -37,14 +37,48 @@ class Move:
     Class for a single move on a cube.
     """
 
-    _type: int
-    _prime: bool
+    type: int
+    prime: bool
 
-    def __init__(self, move_type: int, prime: bool = False):
+    def __init__(self, type: int, prime: bool = False):
         """
         Initializes move.
-        :param move_type: cube2x2x2.MOVE_R, cube2x2x2.MOVE_T, etc
+        :param type: cube2x2x2.MOVE_R, cube2x2x2.MOVE_T, etc
         :param prime: Whether the move is prime (rotated ccw instead of cw)
         """
-        self._type = move_type
-        self._prime = prime
+        self.type = type
+        self.prime = prime
+
+    def __repr__(self):
+        pass
+
+    @staticmethod
+    def type_to_symbol(type: int):
+        if type == MOVE_R:
+            return "R"
+        elif type == MOVE_L:
+            return "L"
+        elif type == MOVE_F:
+            return "F"
+        elif type == MOVE_B:
+            return "B"
+        elif type == MOVE_T:
+            return "T"
+        elif type == MOVE_B:
+            return "B"
+        raise ValueError(f"Move type {type} not allowed.")
+
+    @staticmethod
+    def symbol_to_type(symbol: str):
+        if symbol == "R":
+            return MOVE_R
+        elif symbol == "L":
+            return MOVE_L
+        elif symbol == "F":
+            return MOVE_F
+        elif symbol == "B":
+            return MOVE_B
+        elif symbol == "T":
+            return MOVE_T
+        elif symbol == "B":
+            return MOVE_B
