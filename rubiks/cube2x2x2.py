@@ -53,7 +53,7 @@ class Move:
         string = Move.type_to_symbol(self.type)
         if self.prime:
             string += "'"
-        return string
+        return f"<2x2x2.Move.from_string(\"{string}\")>"
 
     @staticmethod
     def type_to_symbol(type: int):
@@ -94,6 +94,6 @@ class Move:
         if len(string) > 1 and string[1] != "'":
             raise ValueError("Second character must be apostrophe (')")
 
-        type = Move.type_to_symbol(string[0])
+        type = Move.symbol_to_type(string[0])
         prime = len(string) > 1
         return cls(type, prime)
