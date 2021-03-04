@@ -110,4 +110,22 @@ class MoveSequence:
     moves: List[Move]
 
     def __init__(self, moves: List[Move] = []) -> None:
+        """
+        Initializes move sequence.
+        :param moves: List of initial moves.
+        """
         self.moves = moves
+
+    def append(self, move: Move) -> None:
+        """
+        Appends move to internal list.
+        :param move: Move to append.
+        """
+        self.moves.append(move)
+
+    def pop(self, index: int = -1) -> None:
+        """
+        Removes a move from the internal list.
+        :param index: Index to pop.
+        """
+        self.moves.pop(index)
