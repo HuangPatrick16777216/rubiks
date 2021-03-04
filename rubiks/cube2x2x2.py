@@ -85,3 +85,15 @@ class Move:
             return MOVE_T
         elif symbol == "B":
             return MOVE_B
+
+    @classmethod
+    def from_string(cls, string: str):
+        string = string.strip()
+        if len(string) not in (1, 2):
+            raise ValueError("String must have length 1 or 2.")
+        if len(string) > 1 and string[1] != "'":
+            raise ValueError("Second character must be apostrophe (')")
+
+        type = Move.type_to_symbol(string[0])
+        prime = len(string) > 1
+        return cls(type, prime)
