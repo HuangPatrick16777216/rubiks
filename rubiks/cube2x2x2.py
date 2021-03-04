@@ -25,19 +25,11 @@ RED:     int = 4
 ORANGE:  int = 5
 
 MOVE_R:  int = 6
-MOVE_RP: int = 7
-MOVE_L:  int = 8
-MOVE_LP: int = 9
-
-MOVE_F:  int = 10
-MOVE_FP: int = 11
-MOVE_B:  int = 12
-MOVE_BP: int = 13
-
-MOVE_T:  int = 14
-MOVE_TP: int = 15
-MOVE_B:  int = 16
-MOVE_BP: int = 17
+MOVE_L:  int = 7
+MOVE_F:  int = 8
+MOVE_B:  int = 9
+MOVE_T:  int = 10
+MOVE_B:  int = 11
 
 
 class Move:
