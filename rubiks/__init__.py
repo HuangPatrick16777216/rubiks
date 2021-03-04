@@ -19,4 +19,4 @@
 
 __version__ = "0.0.1"
 
-from . import cube3x3x3
+from . import cube2x2x2
