@@ -64,6 +64,9 @@ class Move:
             string += "'"
         return string
 
+    def __eq__(self, move) -> bool:
+        return (self.type==move.type) and (self.prime==move.prime)
+
     @staticmethod
     def type_to_symbol(type: int) -> str:
         if type == MOVE_R:
