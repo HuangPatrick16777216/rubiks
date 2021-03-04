@@ -31,8 +31,8 @@ MOVE_R:  int = 6
 MOVE_L:  int = 7
 MOVE_F:  int = 8
 MOVE_B:  int = 9
-MOVE_T:  int = 10
-MOVE_B:  int = 11
+MOVE_U:  int = 10
+MOVE_D:  int = 11
 
 
 class Move:
@@ -58,6 +58,12 @@ class Move:
             string += "'"
         return f"<2x2x2.Move.from_string(\"{string}\")>"
 
+    def __str__(self) -> str:
+        string = Move.type_to_symbol(self.type)
+        if self.prime:
+            string += "'"
+        return string
+
     @staticmethod
     def type_to_symbol(type: int) -> str:
         if type == MOVE_R:
@@ -68,9 +74,9 @@ class Move:
             return "F"
         elif type == MOVE_B:
             return "B"
-        elif type == MOVE_T:
+        elif type == MOVE_U:
             return "T"
-        elif type == MOVE_B:
+        elif type == MOVE_D:
             return "B"
         raise ValueError(f"Move type {type} not allowed.")
 
@@ -85,9 +91,9 @@ class Move:
         elif symbol == "B":
             return MOVE_B
         elif symbol == "T":
-            return MOVE_T
+            return MOVE_U
         elif symbol == "B":
-            return MOVE_B
+            return MOVE_D
 
     @classmethod
     def from_string(cls, string: str):
@@ -115,6 +121,10 @@ class MoveSequence:
         :param moves: List of initial moves.
         """
         self.moves = moves
+
+    def __repr__(self) -> None:
+        string = ", ".join([move.__str__() for move in self.moves])
+        return f"<2x2x2.MoveSequence({string})>"
 
     def append(self, move: Move) -> None:
         """
