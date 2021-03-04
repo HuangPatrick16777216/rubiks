@@ -120,11 +120,17 @@ class MoveSequence:
         Initializes move sequence.
         :param moves: List of initial moves.
         """
-        self.moves = moves
+        self.moves = list(moves)
 
-    def __repr__(self) -> None:
+    def __repr__(self) -> str:
         string = ", ".join([move.__str__() for move in self.moves])
         return f"<2x2x2.MoveSequence({string})>"
+
+    def __getitem__(self, index: int) -> Move:
+        return self.moves[index]
+
+    def __contains__(self, move: Move) -> bool:
+        return move in self.moves
 
     def append(self, move: Move) -> None:
         """
@@ -139,3 +145,6 @@ class MoveSequence:
         :param index: Index to pop.
         """
         self.moves.pop(index)
+
+    def count(self, move: Move) -> int:
+        return self.moves.count(move)
