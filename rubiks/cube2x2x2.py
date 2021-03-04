@@ -20,12 +20,12 @@
 from typing import List
 
 
-WHITE:   int = 0
-YELLOW:  int = 1
-BLUE:    int = 2
-GREEN:   int = 3
-RED:     int = 4
-ORANGE:  int = 5
+W:   int = 0
+Y:  int = 1
+B:    int = 2
+G:   int = 3
+R:     int = 4
+O:  int = 5
 
 MOVE_R:  int = 6
 MOVE_L:  int = 7
