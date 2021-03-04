@@ -43,7 +43,7 @@ class Move:
     type: int
     prime: bool
 
-    def __init__(self, type: int, prime: bool = False):
+    def __init__(self, type: int, prime: bool = False) -> None:
         """
         Initializes move.
         :param type: cube2x2x2.MOVE_R, cube2x2x2.MOVE_T, etc
@@ -52,14 +52,14 @@ class Move:
         self.type = type
         self.prime = prime
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         string = Move.type_to_symbol(self.type)
         if self.prime:
             string += "'"
         return f"<2x2x2.Move.from_string(\"{string}\")>"
 
     @staticmethod
-    def type_to_symbol(type: int):
+    def type_to_symbol(type: int) -> str:
         if type == MOVE_R:
             return "R"
         elif type == MOVE_L:
@@ -75,7 +75,7 @@ class Move:
         raise ValueError(f"Move type {type} not allowed.")
 
     @staticmethod
-    def symbol_to_type(symbol: str):
+    def symbol_to_type(symbol: str) -> int:
         if symbol == "R":
             return MOVE_R
         elif symbol == "L":
